@@ -118,7 +118,7 @@ SPEED_1GBPS = 1
 SPEED_100MBPS = 2
 SPEED_10MBPS = 3
 
-speed = [SPEED_1GBPS, SPEED_1GBPS, SPEED_1GBPS, SPEED_1GBPS, SPEED_1GBPS]
+speed = [SPEED_1GBPS, SPEED_100MBPS, SPEED_1GBPS, SPEED_1GBPS, SPEED_1GBPS]
 speed_Mbps = [10**(4 - x) for x in speed]
 
 default_vlan = 0  # Default VLAN ID on all ports for untagged frames is 555
@@ -473,12 +473,12 @@ mii_mode_parameters.append(
     {
         "xMII_MODE[0]": RGMII,
         "PHY_MAC[0]": 0,  # not applicable for RGMII,
-        "xMII_MODE[1]": RGMII,
-        "PHY_MAC[1]": 0,  # not applicable for RGMII,
+        "xMII_MODE[1]": RMII,
+        "PHY_MAC[1]": 1,  # not applicable for RGMII,
         "xMII_MODE[2]": RGMII,
-        "PHY_MAC[2]": 0,  # not applicable for RGMII,
+        "PHY_MAC[2]": 1,  # not applicable for RGMII,
         "xMII_MODE[3]": RGMII,
-        "PHY_MAC[3]": 0,  # not applicable for RGMII,
+        "PHY_MAC[3]": 1,  # not applicable for RGMII,
         "xMII_MODE[4]": RGMII,
         "PHY_MAC[4]": 0,  # not applicable for RGMII,
     })

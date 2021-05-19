@@ -476,9 +476,9 @@ mii_mode_parameters.append(
         "xMII_MODE[1]": RMII,
         "PHY_MAC[1]": 1,  # not applicable for RGMII,
         "xMII_MODE[2]": RGMII,
-        "PHY_MAC[2]": 1,  # not applicable for RGMII,
+        "PHY_MAC[2]": 0,  # not applicable for RGMII,
         "xMII_MODE[3]": RGMII,
-        "PHY_MAC[3]": 1,  # not applicable for RGMII,
+        "PHY_MAC[3]": 0,  # not applicable for RGMII,
         "xMII_MODE[4]": RGMII,
         "PHY_MAC[4]": 0,  # not applicable for RGMII,
     })

@@ -245,7 +245,8 @@ vlan_lookup_table.append(
         "VEGR_MIRR": 0,
         "VMEMB_PORT": 0x1F,  # All ports are member of the VLAN
         "VLAN_BC": 0x1F,  # Broadcast domain for the VLAN
-        "TAG_PORT": 0x00,  # Egress frames are untagged
+        #"TAG_PORT": 0,  # Egress frames are untagged
+        "TAG_PORT": 0x1F,  # Egress frames are untagged
         "VLANID": default_vlan
     })
 

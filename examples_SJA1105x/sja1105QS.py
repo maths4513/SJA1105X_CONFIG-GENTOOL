@@ -243,10 +243,12 @@ vlan_lookup_table.append(
     {
         "VING_MIRR": 0,
         "VEGR_MIRR": 0,
+        #"VMEMB_PORT": 0,     # None ports are member of the VLAN
         "VMEMB_PORT": 0x1F,  # All ports are member of the VLAN
         "VLAN_BC": 0x1F,  # Broadcast domain for the VLAN
-        #"TAG_PORT": 0,  # Egress frames are untagged
-        "TAG_PORT": 0x1F,  # Egress frames are untagged
+        #"VLAN_BC": 0,  # Broadcast domain for the VLAN
+        "TAG_PORT": 0,  # Egress frames are untagged
+        #"TAG_PORT": 0x1F,  # Egress frames are tagged
         "VLANID": default_vlan
     })
 
@@ -256,10 +258,14 @@ for i in range(16):
         {
             "VING_MIRR": 0,
             "VEGR_MIRR": 0,
+            #"VMEMB_PORT": 0,  # none ports are member
             "VMEMB_PORT": 0x1F,  # all ports are member
             "VLAN_BC": 0x1F,  # Broadcast domain
-            "TAG_PORT": 0x1F,  # Egress frames are tagged
-            "VLANID": i
+            #"VLAN_BC": 0,  # Broadcast domain
+           # "TAG_PORT": 0x1F,  # Egress frames are tagged
+            "TAG_PORT": 0,  # Egress frames are untagged
+           "VLANID": i
+         
         })
 
 #############################################################################
@@ -308,7 +314,8 @@ l2_address_lookup_table.append(
         "IOTAG": 0,
         "MASK_MACADDR": 0xFFFFFFFFFFFF,
         "MASK_VLANID": 0xFFF,
-        "MASK_IOTAG": 0x1,
+        #"MASK_IOTAG": 0x1,
+        "MASK_IOTAG": 0x0,
         "RETAG": 0,
         "MIRR": 0,
         "TAKETS": 0,
@@ -473,15 +480,15 @@ MAC_MODE = 0
 mii_mode_parameters.append(
     {
         "xMII_MODE[0]": RGMII,
-        "PHY_MAC[0]": 0,  # not applicable for RGMII,
+        "PHY_MAC[0]": 1,  # not applicable for RGMII,
         "xMII_MODE[1]": RMII,
-        "PHY_MAC[1]": 1,  # not applicable for RGMII,
+        "PHY_MAC[1]": 0,  # not applicable for RGMII,
         "xMII_MODE[2]": RGMII,
         "PHY_MAC[2]": 0,  # not applicable for RGMII,
         "xMII_MODE[3]": RGMII,
         "PHY_MAC[3]": 0,  # not applicable for RGMII,
         "xMII_MODE[4]": RGMII,
-        "PHY_MAC[4]": 0,  # not applicable for RGMII,
+        "PHY_MAC[4]": 1,  # not applicable for RGMII,
     })
 
 #############################################################################

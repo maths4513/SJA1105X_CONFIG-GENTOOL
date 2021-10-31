@@ -338,11 +338,13 @@ c.append(l2_policing_table)
 # a value of 100 means that no policing is performed
 ratio = [
     [100, 100, 100, 100, 100, 100, 100, 100],  # Port 0 - no policing
-    [100, 10, 10, 10, 10, 10, 10, 10],  # Port 1 - 10% for at each prio, except prio 0
-    [100, 0, 0, 0, 0, 0, 0, 0],  # Port 2 - only lowest prio allowed
+ #   [100, 10, 10, 10, 10, 10, 10, 10],  # Port 1 - 10% for at each prio, except prio 0
+ #   [100, 0, 0, 0, 0, 0, 0, 0],  # Port 2 - only lowest prio allowed
+    [100, 100, 100, 100, 100, 100, 100, 100],  # Port 1 - no policing
+    [100, 100, 100, 100, 100, 100, 100, 100],  # Port 2 - no policing
     [100, 100, 100, 100, 100, 100, 100, 100],  # Port 3 - no policing
-    [100, 100, 100, 100, 100, 100, 100, 100]
-]  # Port 4 - no policing
+    [100, 100, 100, 100, 100, 100, 100, 100]    # Port 4 - no policing
+]  
 
 for port in range(NO_ETH_PORTS):
     for prio in range(NO_PRIORITIES):
